@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count value</title>
+</head>
+<body>
+    <pre id="p">0</pre>
+    <button onclick="add()">add</button>
+    <button onclick="reset()">reset</button>
+    <button onclick="sub()">sub</button>
+    <script>
+        let count=0;
+        function add(){
+            count++;
+            document.getElementById("p").textContent=count;
+        }
+        function sub(){
+            count--;
+            document.getElementById("p").textContent=count;
+        }
+        function reset(){
+            count=0;
+            document.getElementById("p").textContent=count;
+        }
+    </script>
+    
+</body>
+</html>
