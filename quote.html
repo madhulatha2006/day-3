@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quote App</title>
+    </head>
+    <body>
+        <button onclick="getquote()">Click for Quote</button>
+        <pre id="output"></pre>
+    
+        <script>
+            async function getquote() {
+                    let response = await fetch("https://api.api-ninjas.com/v1/quotes", {
+                        method: "GET",
+                        headers: {
+                            "X-Api-Key": "n2Iqzgw810hK5HERJ50MaQ==rewxvGAyDzadZpfa"
+                        }
+                    });
+    
+                    let data = await response.json();
+                    let quote = data[0].quote;
+                    let author = data[0].author;
+    
+                    document.getElementById("output").textContent = `"${quote}"\n— ${author}`;
+               
+            }
+        </script>
+    </body>
+</html>
